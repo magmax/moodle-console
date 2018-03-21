@@ -38,6 +38,12 @@ class Parser:
 
 
 class MoodleShell(cmd.Cmd):
+    intro = """
+Now you are logged in.
+Next steps:
+- Run "select" to select a subject. It allows completion.
+- Then run "download" to download a module. No arguments to download them all.
+    """
     def __init__(self, session, url, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.subject = None
@@ -179,11 +185,14 @@ def getsession(url, user, password):
 
 def main():
     url = "https://campusvirtual.uclm.es"
-    with open("credentials") as fd:
-        cred = json.load(fd)
-       
-    #user = input("User? ")
-    #pwd = input("Password? ")
+    if os.path.exists("credentials"):
+        with open("credentials") as fd:
+            cred = json.load(fd)
+    
+    if not cred['user']:
+        cred['user'] = input("User? ")
+    if not cred['password']:
+        cred['password'] = input("Password? ")
 
     session = getsession(url, cred['user'], cred['password'])
     
