@@ -5,12 +5,19 @@ import json
 import logging
 import re
 import os
+import sys
+import urllib3
+import getpass
 import requests
 from bs4 import BeautifulSoup
-import urllib3
 
 
+# python 2 and 3 compatible input
+cinput = input if sys.version_info[0] == 3 else raw_input
+
+# avoid annoying warnings from SSL
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 logger = logging.getLogger()
 
 
@@ -188,11 +195,13 @@ def main():
     if os.path.exists("credentials"):
         with open("credentials") as fd:
             cred = json.load(fd)
+    else:
+        cred = dict()
     
-    if not cred['user']:
-        cred['user'] = input("User? ")
-    if not cred['password']:
-        cred['password'] = input("Password? ")
+    if not cred.get('user'):
+        cred['user'] = cinput("User? ")
+    if not cred.get('password'):
+        cred['password'] = getpass.getpass("Password? ")
 
     session = getsession(url, cred['user'], cred['password'])
     
