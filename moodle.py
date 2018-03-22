@@ -220,7 +220,6 @@ def main():
             print("Try again:")
             cred['user'] = cinput("User? ")
             cred['password'] = getpass.getpass("Password? ")
-    return
     shell = MoodleShell(session, url)
     shell.cmdloop()
 
