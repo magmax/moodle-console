@@ -21,6 +21,10 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 logger = logging.getLogger()
 
 
+class InvalidPassword(Exception):
+    pass
+
+
 class Parser:
     def __init__(self, html_doc):
         self.soup = BeautifulSoup(html_doc, 'html.parser')
@@ -180,7 +184,10 @@ def getsession(url, user, password):
         adAS_password=password,
         adAS_username=user,
     )
-    r = s.post(r.url, data=data, verify=False)
+    try:
+        r = s.post(r.url, data=data, verify=False, timeout=4)
+    except requests.exceptions.ReadTimeout:
+        raise InvalidPassword()
     bs = BeautifulSoup(r.content, 'html.parser')
     data = {}
     for i in bs.findAll('input'):
@@ -188,6 +195,7 @@ def getsession(url, user, password):
     if not data:
         return
     r = s.post(bs.find('form')['action'], data=data, verify=False)
+    print(r.status_code)
     return s 
 
 def main():
@@ -203,8 +211,16 @@ def main():
     if not cred.get('password'):
         cred['password'] = getpass.getpass("Password? ")
 
-    session = getsession(url, cred['user'], cred['password'])
-    
+    while True:
+        try:
+            session = getsession(url, cred['user'], cred['password'])
+            break
+        except InvalidPassword:
+            print("Invalid credentials or connection timeout!")
+            print("Try again:")
+            cred['user'] = cinput("User? ")
+            cred['password'] = getpass.getpass("Password? ")
+    return
     shell = MoodleShell(session, url)
     shell.cmdloop()
 
