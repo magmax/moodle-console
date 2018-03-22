@@ -73,7 +73,8 @@ Next steps:
         return Parser(r.content)
    
     def download_subject(self, id, path):
-        logger.debug("Selecting section with id = %s" % id)
+        logger.warn("download_subject %s %s" % (id, path))
+        logger.warn("Selecting section with id = %s" % id)
         if not os.path.exists(path):
             os.makedirs(path)
         parser = self.download(self.subject['href'])
@@ -134,6 +135,7 @@ Next steps:
 
     def do_download(self, arg):
         path = input("Output path? ")
+        print("do_download %s %s" % (arg, self.choices))
         if not arg or arg == '_EVERYTHING_':
             for title, id in self.choices.items():
                 self.download_subject(id, os.path.join(path, title[:20]))
