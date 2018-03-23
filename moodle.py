@@ -134,9 +134,12 @@ Next steps:
         print("Select a subject")
 
     def do_download(self, arg):
+        logger.warning("do_download %s %s" % (arg, self.choices))
         path = input("Output path? ")
         print("do_download %s %s" % (arg, self.choices))
         if not arg or arg == '_EVERYTHING_':
+            #this is just a patch to ensure choices has the last data
+            self.complete_download(None, None, None, None)
             for title, id in self.choices.items():
                 self.download_subject(id, os.path.join(path, title[:20]))
         else:
@@ -157,11 +160,11 @@ Next steps:
                 result.append('_EVERYTHING_')
             for title, href in (p.module_list()):
                 _title = title.replace(" ", "_")
+                url, _, id = href.partition('#')
+                self.choices[_title] = id
                 if text and text.lower() not in _title.lower():
                     continue
-                url, _, id = href.partition('#')
                 result.append(_title)
-                self.choices[_title] = id
             return result
         except Exception as e:
             print(e)
