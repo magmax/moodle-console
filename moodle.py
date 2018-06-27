@@ -1,12 +1,16 @@
+#! /usr/bin/env python
 import cmd
 import sys
-import argparse
+from argparse import ArgumentParser
 import json
 import logging
 import re
 import os
 import sys
-import urllib3
+try:
+    import urllib3
+except ImportError:
+    urllib3 = None
 import getpass
 import requests
 from bs4 import BeautifulSoup
@@ -16,7 +20,8 @@ from bs4 import BeautifulSoup
 cinput = input if sys.version_info[0] == 3 else raw_input
 
 # avoid annoying warnings from SSL
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+if urllib3 is not None:
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 logger = logging.getLogger()
 
@@ -48,36 +53,38 @@ class Parser:
             yield item.text.strip(), item.find('a')['href']
 
 
-class MoodleShell(cmd.Cmd):
-    intro = """
-Now you are logged in.
-Next steps:
-- Run "select" to select a subject. It allows completion.
-- Then run "download" to download a module. No arguments to download them all.
-    """
-    def __init__(self, session, url, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.subject = None
+class Moodle:
+    def __init__(self, session, url):
         self.session = session
         self.url = url
 
     def download(self, url):
-        mock = False
-    #    mock = True
-        if mock:
-            with open("example_moodle.html") as fd:
-                return Parser(fd.read())
         if url.startswith('/'):
             url = self.url + url
         r = self.session.get(url, verify=False)
         return Parser(r.content)
    
-    def download_subject(self, id, path):
-        logger.warn("download_subject %s %s" % (id, path))
-        logger.warn("Selecting section with id = %s" % id)
-        if not os.path.exists(path):
-            os.makedirs(path)
-        parser = self.download(self.subject['href'])
+    def download_link(self, url, title, path):
+        logger.debug("Downloading '%s'" % title)
+        if not title:
+            logger.warning("Trying to download an empty title. skipping url %s" % url)
+            return
+        r = self.session.get(url, verify=False)
+        cd = r.headers.get("Content-Disposition", '')
+        m = re.match('.*filename="(.*?)".*', cd)
+        filename = m.group(1) if m else title
+        logger.info("Downloading file %s" % filename)
+        with open(os.path.join(path, filename), 'bw+') as fd:
+            fd.write(r.content)
+        logger.info("File %s downloaded" % filename)
+   
+    def get_subjects(self):
+        p = self.download("/my/")
+        for title, href in (p.course_list()):
+            yield title, href
+        
+    def get_subject_content(self, subject_href):
+        parser = self.download(subject_href)
         content = parser.find(id=id)
         if not content:
             logger.info("Subject without content: %s" % id)
@@ -93,19 +100,29 @@ Next steps:
             if '#' in href:
                 logging.info("Ignoring link to %s" % title)
                 continue
-            self.download_link(href, title, path)
-        #print(content)
+            yield title, href
+ 
 
-    def download_link(self, url, title, path):
-        logger.warning("Downloading %s" % title)
-        r = self.session.get(url, verify=False)
-        cd = r.headers.get("Content-Disposition", '')
-        m = re.match('.*filename="(.*?)".*', cd)
-        filename = m.group(1) if m else title
-        logger.warning("Downloading file %s" % filename)
-        with open(os.path.join(path, filename), 'bw+') as fd:
-            fd.write(r.content)
-        logger.warning("File %s downloaded" % filename)
+class MoodleShell(cmd.Cmd):
+    intro = """
+Now you are logged in.
+Next steps:
+- Run "select" to select a subject. It allows completion.
+- Then run "download" to download a module. No arguments to download them all.
+    """
+
+    def __init__(self, moodle, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.subject = None
+        self.moodle = moodle
+
+    def download_subject(self, id, path):
+        logger.info("download_subject %s %s" % (id, path))
+        logger.debug("Selecting section with id = %s" % id)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        for title, href in self.moodle.get_subject_content(self.subject['href']):
+            self.moodle.download_link(href, title, path)
 
     def do_select(self, arg):
         print("selected: ", arg)
@@ -118,9 +135,8 @@ Next steps:
     def complete_select(self, text, line, begidx, endidx):
         try:
             self.choices = {}
-            p = self.download("/my/")
             result = []
-            for title, href in (p.course_list()):
+            for title, href in self.moodle.get_subjects():
                 _title = title.replace(" ", "_")
                 if text and not text.lower() in _title.lower():
                     continue
@@ -134,9 +150,8 @@ Next steps:
         print("Select a subject")
 
     def do_download(self, arg):
-        logger.warning("do_download %s %s" % (arg, self.choices))
+        logger.debug("do_download %s %s" % (arg, self.choices))
         path = input("Output path? ")
-        print("do_download %s %s" % (arg, self.choices))
         if not arg or arg == '_EVERYTHING_':
             #this is just a patch to ensure choices has the last data
             self.complete_download(None, None, None, None)
@@ -153,7 +168,7 @@ Next steps:
 
         try:
             self.choices = {}
-            p = self.download(self.subject['href'])
+            p = self.moodle.download(self.subject['href'])
             
             result = []
             if not text or text.upper() in '_EVERYTHING_':
@@ -200,32 +215,77 @@ def getsession(url, user, password):
     if not data:
         return
     r = s.post(bs.find('form')['action'], data=data, verify=False)
-    print(r.status_code)
+    logger.debug("access to url %s resulting in %s" % (url, r.status_code))
     return s 
 
+
+def init_logging(debug=0):
+    levels = (
+        (logging.WARNING, logging.WARNING),
+        (logging.INFO, logging.WARNING),
+        (logging.DEBUG, logging.WARNING),
+        (logging.DEBUG, logging.INFO),
+        (logging.DEBUG, logging.DEBUG),
+    )
+    level = levels[min(debug, len(levels) - 1)]
+    formatter = logging.Formatter('** %(asctime)s.%(msecs)03d %(levelname)s: '
+                                  '[%(name)s] %(message)s', datefmt="%Y-%m-%d %H:%M:%S")
+    handler = logging.StreamHandler()
+    handler.setFormatter(formatter)
+    handler.setLevel(level[0])
+    logger.setLevel(level[0])
+    logger.addHandler(handler)
+    urllib3_logger = logging.getLogger('urllib3.connectionpool')
+    urllib3_logger.setLevel(level[1])
+
+def parse_args():
+    '''Parse command line'''
+
+    parser = ArgumentParser()
+
+    parser.add_argument('-v', '--debug', action='count', default=0,
+                        help='Increases verbosity')
+    parser.add_argument('--url', default="https://campusvirtual.uclm.es",
+                        help="Url to connect to")
+    parser.add_argument('--user',
+                        help="Username to be used")
+    parser.add_argument('--password',
+                        help="Password to be used")
+    return parser.parse_args()
+
+
+
 def main():
-    url = "https://campusvirtual.uclm.es"
+    options = parse_args()
+    init_logging(options.debug)
+
     if os.path.exists("credentials"):
         with open("credentials") as fd:
             cred = json.load(fd)
     else:
         cred = dict()
-    
+
+    if options.user:
+        cred['user'] = options.user
+    if options.password:
+        cred['password'] = options.password
+
     if not cred.get('user'):
-        cred['user'] = cinput("User? ")
+        cred['user'] = input("User? ")
     if not cred.get('password'):
         cred['password'] = getpass.getpass("Password? ")
 
     while True:
         try:
-            session = getsession(url, cred['user'], cred['password'])
+            session = getsession(options.url, cred['user'], cred['password'])
             break
         except InvalidPassword:
             print("Invalid credentials or connection timeout!")
             print("Try again:")
             cred['user'] = cinput("User? ")
             cred['password'] = getpass.getpass("Password? ")
-    shell = MoodleShell(session, url)
+    moodle = Moodle(session, options.url)
+    shell = MoodleShell(moodle)
     shell.cmdloop()
 
 
