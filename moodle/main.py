@@ -74,8 +74,11 @@ class Moodle:
         m = re.match('.*filename="(.*?)".*', cd)
         filename = m.group(1) if m else title
         logger.info("Downloading file %s" % filename)
-        with open(os.path.join(path, filename), 'bw+') as fd:
-            fd.write(r.content)
+        with open(os.path.join(path, filename.replace('/', '_')), 'bw+') as fd:
+            if not r.url.startswith(self.url):
+                fd.write(bytearray('link: %s\n' % r.url, 'utf-8'))
+            else:
+                fd.write(r.content)
         logger.info("File %s downloaded" % filename)
    
     def get_subjects(self):
