@@ -1,4 +1,4 @@
-#. How to install it
+# How to install it
 
 Clone the repository, create a virtualenv and install the requirements.txt.
 
@@ -12,7 +12,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-#. How to use it
+# How to use it
 
 Simply write:
 
