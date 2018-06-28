@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html dir="ltr" xml:lang="es" class="yui3-js-enabled" lang="es"><head>
+    <title>Curso: Example1</title>
+    <link rel="shortcut icon" href="https://campusvirtual.uclm.es/theme/image.php/boost/theme/1505391229/favicon">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="moodle, Curso: Example 1	">
+<link rel="stylesheet" type="text/css" href="example1_files/yui_combo_002.css"><script charset="utf-8" id="yui_3_17_2_1_1530125826667_8" src="example1_files/yui_combo.js" async=""></script><link charset="utf-8" rel="stylesheet" id="yui_3_17_2_1_1530125826667_18" href="example1_files/yui_combo.css"><script charset="utf-8" id="yui_3_17_2_1_1530125826667_19" src="example1_files/yui_combo_003.js" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1530125826667_28" src="example1_files/yui_combo_004.js" async=""></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="example1_files/all.css">
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/campusvirtual.uclm.es","sesskey":"YmrRJil8P6","themerev":"1505391229","slasharguments":1,"theme":"boost","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1505391229","admin":"admin","svgicons":true,"usertimezone":"Europa\/Madrid","contextid":2290043};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/campusvirtual.uclm.es\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/campusvirtual.uclm.es\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/campusvirtual.uclm.es\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/campusvirtual.uclm.es\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/campusvirtual.uclm.es\/theme\/yui_combo.php?m\/1505391229\/","combine":true,"comboBase":"https:\/\/campusvirtual.uclm.es\/theme\/yui_combo.php?","ext":false,"root":"m\/1505391229\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader","moodle-core-event"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_ddimageortext-form":{"requires":["moodle-qtype_ddimageortext-dd","form_filepicker"]},"moodle-qtype_ddimageortext-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-qtype_ddmarker-form":{"requires":["moodle-qtype_ddmarker-dd","form_filepicker","graphics","escape"]},"moodle-qtype_ddmarker-dd":{"requires":["node","event-resize","dd","dd-drop","dd-constrain","graphics"]},"moodle-qtype_ddwtos-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-randomquestion":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-quizquestionbank":{"requires":["base","event","node","io","io-form","yui-later","moodle-question-qbankmanager","moodle-core-notification-dialogue"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-format_grid-gridkeys":{"requires":["event-nav-keys"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-button":{"requires":["moodle-editor_atto-plugin","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/campusvirtual.uclm.es\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/campusvirtual.uclm.es\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1505391229\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/campusvirtual.uclm.es\/lib\/javascript.php\/1505391229\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/campusvirtual.uclm.es\/lib\/javascript.php\/1505391229\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.1\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/first" src="example1_files/first.js"></script><script type="text/x-mathjax-config">
+
+MathJax.Hub.Config({
+    config: ["Accessible.js", "Safe.js"],
+    errorSettings: { message: ["!"] },
+    skipStartupTypeset: true,
+    messageStyle: "none"
+});
+</script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryprivate" src="example1_files/jquery-private.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="example1_files/jquery-3.js"></script></head>
+
+<body id="page-course-view-topics" class="format-topics  path-course path-course-view gecko dir-ltr lang-es yui-skin-sam yui3-skin-sam campusvirtual-uclm-es pagelayout-course course-27448 context-2290043 category-244  jsenabled">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="#maincontent">Saltar a contenido principal</a>
+</div><script type="text/javascript" src="example1_files/yui_combo_002.js"></script><script type="text/javascript" src="example1_files/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
+    
+        <div class="container-fluid navbar-nav">
+    
+            <div data-region="drawer-toggle">
+                <button aria-expanded="false" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><i class="icon fa fa-bars fa-fw " aria-hidden="true" title="" aria-label=""></i><span class="sr-only">Panel lateral</span></button>
+            </div>
+    
+            <a href="https://campusvirtual.uclm.es/" class="navbar-brand 
+                    hidden-sm-down
+                    ">
+                <span class="site-name hidden-sm-down">CampusVirtual</span>
+            </a>
+    
+            <!-- user_menu -->
+            <div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar" id="action-menu-1-menubar" role="menubar">
+
+            <div class="dropdown d-inline">
+    <a href="#" class="dropdown-toggle" id="dropdown-1" title="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="userbutton"><span class="usertext">USERNAME</span><span class="avatars"><span class="avatar current"><img src="example1_files/f2.png" alt="Imagen de USERNAME" title="Imagen de USERNAME" class="userpicture defaultuserpic" role="presentation" width="35" height="35"></span></span></span><b class="caret"></b></a>
+        <div class="dropdown-menu dropdown-menu-right menu  align-tr-br" id="action-menu-1-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-1" role="menu" data-align="tr-br">
+            <a href="https://campusvirtual.uclm.es/my/" class="dropdown-item menu-action" role="menuitem" data-title="mymoodle,admin" aria-labelledby="actionmenuaction-1"><i class="icon fa fa-tachometer fa-fw " aria-hidden="true" title="Área personal" aria-label="Área personal"></i><span class="menu-action-text" id="actionmenuaction-1">Área personal</span></a><div class="dropdown-divider"></div><a href="https://campusvirtual.uclm.es/user/profile.php?id=89145" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" aria-labelledby="actionmenuaction-2"><i class="icon fa fa-user fa-fw " aria-hidden="true" title="Perfil" aria-label="Perfil"></i><span class="menu-action-text" id="actionmenuaction-2">Perfil</span></a><a href="https://campusvirtual.uclm.es/grade/report/overview/index.php" class="dropdown-item menu-action" role="menuitem" data-title="grades,grades" aria-labelledby="actionmenuaction-3"><i class="icon fa fa-table fa-fw " aria-hidden="true" title="Calificaciones" aria-label="Calificaciones"></i><span class="menu-action-text" id="actionmenuaction-3">Calificaciones</span></a><a href="https://campusvirtual.uclm.es/message/index.php" class="dropdown-item menu-action" role="menuitem" data-title="messages,message" aria-labelledby="actionmenuaction-4"><i class="icon fa fa-comment fa-fw " aria-hidden="true" title="Mensajes" aria-label="Mensajes"></i><span class="menu-action-text" id="actionmenuaction-4">Mensajes</span></a><a href="https://campusvirtual.uclm.es/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" aria-labelledby="actionmenuaction-5"><i class="icon fa fa-wrench fa-fw " aria-hidden="true" title="Preferencias" aria-label="Preferencias"></i><span class="menu-action-text" id="actionmenuaction-5">Preferencias</span></a><div class="dropdown-divider"></div><a href="https://campusvirtual.uclm.es/login/logout.php?sesskey=YmrRJil8P6" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" aria-labelledby="actionmenuaction-6"><i class="icon fa fa-sign-out fa-fw " aria-hidden="true" title="Cerrar sesión" aria-label="Cerrar sesión"></i><span class="menu-action-text" id="actionmenuaction-6">Cerrar sesión</span></a>
+        </div>
+</div>
+
+
+        </div>
+
+</div></div>
+    
+            <!-- navbar_plugin_output -->
+            <div class="popover-region collapsed popover-region-messages" id="nav-message-popover-container" data-userid="89145" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" aria-role="button" aria-controls="popover-region-container-5b33de027a0215b33de0273f3f10" aria-haspopup="true" aria-label="Mostrar la ventana de mensajes cuando no hay mensajes nuevos" tabindex="0">
+                <i class="icon fa fa-comment fa-fw " aria-hidden="true" title="Mostrar/ocultar menú de mensajes" aria-label="Mostrar/ocultar menú de mensajes"></i>
+        <div class="count-container hidden" data-region="count-container"></div>
+
+    </div>
+    <div id="popover-region-container-5b33de027a0215b33de0273f3f10" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Ventana de notificación" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Mensajes</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <div class="newmessage-link">
+                <a href="https://campusvirtual.uclm.es/message/index.php?contactsfirst=1">Nuevo mensaje
+                </a>
+        </div>
+        <div class="hover-tooltip-container">
+                    <a class="mark-all-read-button" href="#" role="button" title="Marcar todo como leído" data-action="mark-all-read">
+                    <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true" title="Marcar todo como leído" aria-label="Marcar todo como leído"></i></span>
+                    <span class="loading-icon"><img class="icon " alt="Cargando" title="Cargando" src="example1_files/loading.gif"></span>
+                </a>
+
+    <div class="hover-tooltip">
+        Marcar todo como leído
+    </div>
+</div>
+        <div class="hover-tooltip-container">
+                    <a href="https://campusvirtual.uclm.es/message/edit.php?id=89145" title="Preferencias de mensajes">
+                    <i class="icon fa fa-cog fa-fw " aria-hidden="true" title="Preferencias de mensajes" aria-label="Preferencias de mensajes"></i>
+                </a>
+
+    <div class="hover-tooltip">
+        Preferencias de mensajes
+    </div>
+</div>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="messages" data-region="messages" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" data-region="empty-message" tabindex="0">No hay mensajes</div>
+
+            </div>
+            <span class="loading-icon"><img class="icon " alt="Cargando" title="Cargando" src="example1_files/loading.gif"></span>
+        </div>
+                <a class="see-all-link" href="https://campusvirtual.uclm.es/message/index.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Ver todo</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed popover-region-notifications" id="nav-notification-popover-container" data-userid="89145" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" aria-role="button" aria-controls="popover-region-container-5b33de027d14c5b33de0273f3f11" aria-haspopup="true" aria-label="Mostrar la ventana de notificaciones cuando no hay ninguna" tabindex="0">
+                <i class="icon fa fa-bell fa-fw " aria-hidden="true" title="Mostrar/ocultar menú de notificaciones" aria-label="Mostrar/ocultar menú de notificaciones"></i>
+        <div class="count-container hidden" data-region="count-container"></div>
+
+    </div>
+    <div id="popover-region-container-5b33de027d14c5b33de0273f3f11" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Ventana de notificación" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notificaciones</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <div class="hover-tooltip-container">
+                    <a class="mark-all-read-button" href="#" title="Marcar todo como leído" data-action="mark-all-read" role="button">
+                    <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true" title="Marcar todo como leído" aria-label="Marcar todo como leído"></i></span>
+                    <span class="loading-icon"><img class="icon " alt="Cargando" title="Cargando" src="example1_files/loading.gif"></span>
+                </a>
+
+    <div class="hover-tooltip">
+        Marcar todo como leído
+    </div>
+</div>
+        <div class="hover-tooltip-container">
+                    <a href="https://campusvirtual.uclm.es/message/notificationpreferences.php?userid=89145" title="Preferencias de notificación">
+                    <i class="icon fa fa-cog fa-fw " aria-hidden="true" title="Preferencias de notificación" aria-label="Preferencias de notificación"></i>
+                </a>
+
+    <div class="hover-tooltip">
+        Preferencias de notificación
+    </div>
+</div>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications" data-region="all-notifications" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">No tienes notificaciones</div>
+
+            </div>
+            <span class="loading-icon"><img class="icon " alt="Cargando" title="Cargando" src="example1_files/loading.gif"></span>
+        </div>
+                <a class="see-all-link" href="https://campusvirtual.uclm.es/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Ver todo</div>
+                    </div>
+                </a>
+    </div>
+</div>
+    
+            <!-- search_box -->
+            <span class="hidden-md-down">
+            
+            </span>
+    
+            <nav class="nav navbar-nav hidden-md-down">
+                <!-- custom_menu -->
+                <div class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5b33de027ffbb5b33de0273f3f14" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+        Español - Internacional ‎(es)‎
+    </a>
+    <div class="dropdown-menu" aria-labelledby="drop-down-5b33de027ffbb5b33de0273f3f14">
+                <a class="dropdown-item" href="https://campusvirtual.uclm.es/course/view.php?id=27448&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a>
+                <a class="dropdown-item" href="https://campusvirtual.uclm.es/course/view.php?id=27448&amp;lang=es" title="Español - Internacional ‎(es)‎">Español - Internacional ‎(es)‎</a>
+    </div>
+</div>
+                <!-- page_heading_menu -->
+                
+            </nav>
+        </div>
+    </header>
+    
+
+    <div id="page" class="container-fluid">
+        <header id="page-header" class="row"><div class="col-xs-12 p-a-1"><div class="card"><div class="card-block"><div class="pull-xs-right context-header-settings-menu"></div><div class="pull-xs-left"><div class="page-context-header"><div class="page-header-headings"><h1>Example 1	</h1></div></div></div><div class="clearfix w-100 pull-xs-left" id="page-navbar"><div class="breadcrumb-nav"><nav role="navigation">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="https://campusvirtual.uclm.es/my/">Área personal</a></li>
+                <li class="breadcrumb-item">Mis cursos</li>
+                <li class="breadcrumb-item"><a href="https://campusvirtual.uclm.es/course/view.php?id=27448" title="Example 1	">(27448) Example 1	</a></li>
+    </ol>
+</nav></div><div class="breadcrumb-button pull-xs-right"></div></div><div id="course-header"></div></div></div></div></header>
+
+        <div id="page-content" class="row">
+            <div id="region-main-box" class="col-xs-12">
+                <section id="region-main" class="has-blocks">
+                    <div class="card card-block">
+                    <span class="notifications" id="user-notifications"></span>
+                    <div role="main"><span id="maincontent"></span><div class="course-content"><h2 class="accesshide">Diagrama de temas</h2><ul class="topics"><li id="section-0" class="section main clearfix" role="region" aria-label="General"><span class="hidden sectionname">General</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" src="example1_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname accesshide"><span><a href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-0">General</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity forum modtype_forum " id="module-1186016"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/forum/view.php?id=1186016"><img src="example1_files/icon_003.svg" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Avisos<span class="accesshide "> Foro</span></span></a></div></div></div></div></li></ul></div></li><li id="section-1" class="section main clearfix current" role="region" aria-label="Módulo 1 - Introducción a la Criptografía y Algoritmos clásicos"><span class="hidden sectionname">Módulo 1 - Introducción a la Criptografía y Algoritmos clásicos</span><div class="left side"><span class="accesshide ">Tema actual</span></div><div class="right side"><img class="icon spacer" alt="" src="example1_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span><a href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-1">Módulo 1 - Introducción a la Criptografía y Algoritmos clásicos</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-1196514"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1196514"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Introducción a la asignatura<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1194516"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1194516"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Introduccion y algoritmos clásicos<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-1194517"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/assign/view.php?id=1194517"><img src="example1_files/icon_004.svg" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Tarea sobre la sesión 1 de criptografía </span></a></div></div></div></div></li></ul></div></li><li id="section-2" class="section main clearfix" role="region" aria-label="Módulo 2 - Algoritmos de clave simétrica y funciones hash"><span class="hidden sectionname">Módulo 2 - Algoritmos de clave simétrica y funciones hash</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" src="example1_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span><a href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-2">Módulo 2 - Algoritmos de clave simétrica y funciones hash</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-1196512"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1196512"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">CriptoSimetrica-Flujo<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1203642"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1203642"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Cifrado en Bloque - DES<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1203643"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1203643"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Cifrado en bloque - AES<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1203645"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1203645"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Funciones Hash<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1201370"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1201370"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Manual DES<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1201371"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1201371"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Manual AES<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1201373"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1201373"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Manual modos cifrado<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-1203647"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/assign/view.php?id=1203647"><img src="example1_files/icon_004.svg" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Tarea sesión 2</span></a></div></div></div></div></li></ul></div></li><li id="section-3" class="section main clearfix" role="region" aria-label="Módulo 3 - Algoritmos de clave asimétrica"><span class="hidden sectionname">Módulo 3 - Algoritmos de clave asimétrica</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" src="example1_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span><a href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-3">Módulo 3 - Algoritmos de clave asimétrica</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-1204461"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1204461"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Cifrado RSA<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1204462"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1204462"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Ayuda aritmética modular<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1204463"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1204463"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Ayuda Teoría de Números<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1204468"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1204468"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Artículo sobre RSA<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-1204465"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/assign/view.php?id=1204465"><img src="example1_files/icon_004.svg" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Tarea sobre la sesión 3 de criptografía</span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1204466"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1204466"><img src="example1_files/archive-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Software GenRSA<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity page modtype_page " id="module-1222056"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-1"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/page/view.php?id=1222056"><img src="example1_files/icon_002.svg" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Comentarios a la evaluación de la tarea del módulo 3<span class="accesshide "> Página</span></span></a></div></div></div></div></li></ul></div></li><li id="section-4" class="section main clearfix" role="region" aria-label="Módulo 4 - Certificados digitales y PKI"><span class="hidden sectionname">Módulo 4 - Certificados digitales y PKI</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" src="example1_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span><a href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-4">Módulo 4 - Certificados digitales y PKI</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-1208678"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1208678"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Firma, Certificados y PKI<span class="accesshide "> Archivo</span></span></a> <span class="resourcelinkdetails">965.5KB documento PDF</span></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p>Presentación</p></div></div></div></div></div></div></li><li class="activity label modtype_label " id="module-1217163"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><h4>Ejercicio módulo 4</h4>
+<p>Entrega límite: 30 de diciembre, 23:59</p></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1217162"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1217162"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Enunciado Ejercicio PKI<span class="accesshide "> Archivo</span></span></a> <span class="resourcelinkdetails">361KB documento PDF</span></div></div></div></div></li><li class="activity assign modtype_assign " id="module-1216536"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/assign/view.php?id=1216536"><img src="example1_files/icon_004.svg" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Entrega ejercicio Módulo 4<span class="accesshide "> Tarea</span></span></a></div></div></div></div></li></ul></div></li><li id="section-5" class="section main clearfix" role="region" aria-label="Módulo 5 - Aplicaciones Criptográficas"><span class="hidden sectionname">Módulo 5 - Aplicaciones Criptográficas</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" src="example1_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span><a href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-5">Módulo 5 - Aplicaciones Criptográficas</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-1210386"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1210386"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Bitcoin<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1210388"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1210388"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Red Tor<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity assign modtype_assign " id="module-1210393"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/assign/view.php?id=1210393"><img src="example1_files/icon_004.svg" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Tarea sesión 5 </span></a></div></div></div></div></li></ul></div></li><li id="section-6" class="section main clearfix" role="region" aria-label="Módulo 6 - Esteganografía"><span class="hidden sectionname">Módulo 6 - Esteganografía</span><div class="left side"></div><div class="right side"><img class="icon spacer" alt="" src="example1_files/spacer.gif" width="1" height="1"></div><div class="content"><h3 class="sectionname"><span><a href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-6">Módulo 6 - Esteganografía</a></span></h3><div class="section_availability"></div><div class="summary"></div><ul class="section img-text"><li class="activity resource modtype_resource " id="module-1224817"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1224817"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Esteganografía<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity label modtype_label " id="module-1224818"><div><div class="mod-indent-outer"><div class="mod-indent"></div><div><div class="contentwithoutlink "><div class="no-overflow"><div class="no-overflow"><h4>Ejercicio Módulo 6</h4>
+<p></p>
+<p>Entrega límite 10 de Enero de 2018</p></div></div></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1224819"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1224819"><img src="example1_files/pdf-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Enunciado Ejercicio<span class="accesshide "> Archivo</span></span></a></div></div></div></div></li><li class="activity resource modtype_resource " id="module-1224820"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/resource/view.php?id=1224820"><img src="example1_files/bmp-24.png" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">NUEVA Imangen Mandril<span class="accesshide "> Archivo</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p><span style="background-color: #ffff00;">NUEVA IMAGEN</span></p>
+<p>Para no tener problemas de formato con el código de la presentación, 
+ha cambiado la imagen a esta en BMP que no os dará problemas para 
+realizar el ejercicio con el código directamente.</p></div></div></div></div></div></div></li><li class="activity assign modtype_assign " id="module-1225633"><div><div class="mod-indent-outer"><div class="mod-indent mod-indent-2"></div><div><div class="activityinstance"><a class="" onclick="" href="https://campusvirtual.uclm.es/mod/assign/view.php?id=1225633"><img src="example1_files/icon_004.svg" class="iconlarge activityicon" alt=" " role="presentation"><span class="instancename">Entrega Ejercicio módulo 6<span class="accesshide "> Tarea</span></span></a></div><div class="contentafterlink"><div class="no-overflow"><div class="no-overflow"><p><span style="background-color: #ffff00;">Ampliado el plazo hasta el 15 de enero.</span></p></div></div></div></div></div></div></li></ul></div></li><li id="section-7" class="section main clearfix hidden"><div class="left side"></div><div class="right side"></div><div class="content"><div>Tema 7 no disponible</div></div></li><li id="section-8" class="section main clearfix hidden"><div class="left side"></div><div class="right side"></div><div class="content"><div>Tema 8 no disponible</div></div></li><li id="section-9" class="section main clearfix hidden"><div class="left side"></div><div class="right side"></div><div class="content"><div>Tema 9 no disponible</div></div></li><li id="section-10" class="section main clearfix hidden"><div class="left side"></div><div class="right side"></div><div class="content"><div>Tema 10 no disponible</div></div></li></ul></div></div>
+                    
+                    </div>
+                </section>
+                <section data-region="blocks-column" class="hidden-print">
+                    <aside id="block-region-side-pre" class="block-region" data-blockregion="side-pre" data-droptarget="1"><a href="#sb-1" class="sr-only sr-only-focusable">Saltar Personas</a>
+
+<aside id="inst943100" class=" block block_participants  card m-b-1" role="complementary" data-block="participants" aria-labelledby="instance-943100-header">
+
+    <div class="card-block">
+
+
+            <h3 id="instance-943100-header" class="card-title">Personas</h3>
+
+        <div class="card-text content">
+            <ul class="unlist"><li class="r0"><div class="column c1"><a title="Lista total de personas" href="https://campusvirtual.uclm.es/user/index.php?contextid=2290043"><i class="icon fa fa-users fa-fw " aria-hidden="true" title="" aria-label=""></i>Participantes</a></div></li></ul>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</aside>
+
+  <span id="sb-1"></span><a href="#sb-2" class="sr-only sr-only-focusable">Saltar Actividades</a>
+
+<aside id="inst943101" class=" block block_activity_modules  card m-b-1" role="navigation" data-block="activity_modules" aria-labelledby="instance-943101-header">
+
+    <div class="card-block">
+
+
+            <h3 id="instance-943101-header" class="card-title">Actividades</h3>
+
+        <div class="card-text content">
+            <ul class="unlist"><li class="r0"><div class="column c1"><a href="https://campusvirtual.uclm.es/mod/forum/index.php?id=27448"><img class="icon " alt="Foro" title="Foro" src="example1_files/icon_003.svg">Foros</a></div></li>
+<li class="r1"><div class="column c1"><a href="https://campusvirtual.uclm.es/course/resources.php?id=27448"><img class="icon icon" alt="" src="example1_files/icon.svg">Recursos</a></div></li>
+<li class="r0"><div class="column c1"><a href="https://campusvirtual.uclm.es/mod/assign/index.php?id=27448"><img class="icon " alt="Tarea" title="Tarea" src="example1_files/icon_004.svg">Tareas</a></div></li></ul>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</aside>
+
+  <span id="sb-2"></span><a href="#sb-3" class="sr-only sr-only-focusable">Saltar Buscar en los foros</a>
+
+<aside id="inst943102" class=" block block_search_forums  card m-b-1" role="search" data-block="search_forums" aria-labelledby="instance-943102-header">
+
+    <div class="card-block">
+
+
+            <h3 id="instance-943102-header" class="card-title">Buscar en los foros</h3>
+
+        <div class="card-text content">
+            <div class="searchform">
+    <form action="https://campusvirtual.uclm.es/mod/forum/search.php" class="form-inline">
+        <input name="id" value="27448" type="hidden">
+        <div class="form-group">
+            <label class="sr-only" for="searchform_search">Buscar</label>
+            <input id="searchform_search" name="search" class="form-control" size="10" type="text">
+        </div>
+        <button class="btn btn-secondary" id="searchform_button" type="submit">Ir</button>
+        
+    </form>
+    <div class="m-t-1">
+        <a href="https://campusvirtual.uclm.es/mod/forum/search.php?id=27448">Búsqueda avanzada</a>
+            <a class="btn btn-link p-a-0" role="button" data-container="body" data-toggle="popover" data-placement="right" data-content="&lt;div class=&quot;no-overflow&quot;&gt;&lt;p&gt;Para realizar una búsqueda básica de una o más palabras en cualquier lugar del texto, simplemente escríbalas separadas por espacios. Se usarán todas las palabras de más de dos caracteres.&lt;/p&gt;
+
+&lt;p&gt;Para realizar una búsqueda avanzada, pulse el botón de búsqueda sin teclear nada en la caja de texto.&lt;/p&gt;
+&lt;/div&gt; " data-html="true" tabindex="0" data-trigger="focus">
+              <i class="icon fa fa-question-circle text-info fa-fw " aria-hidden="true" title="Ayuda con Buscar" aria-label="Ayuda con Buscar"></i>
+            </a>
+    </div>
+</div>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</aside>
+
+  <span id="sb-3"></span><a href="#sb-4" class="sr-only sr-only-focusable">Saltar Avisos recientes</a>
+
+<aside id="inst943104" class=" block block_news_items  card m-b-1" role="complementary" data-block="news_items" aria-labelledby="instance-943104-header">
+
+    <div class="card-block">
+
+
+            <h3 id="instance-943104-header" class="card-title">Avisos recientes</h3>
+
+        <div class="card-text content">
+            
+<ul class="unlist">
+<li class="post"><div class="head clearfix"><div class="date">6 de ene, 01:17</div><div class="name">TEACHER 1</div></div><div class="info"><a href="https://campusvirtual.uclm.es/mod/forum/discuss.php?d=247593">message 1</a></div></li>
+<li class="post"><div class="head clearfix"><div class="date">24 de dic, 14:22</div><div class="name">TEACHER 1</div></div><div class="info"><a href="https://campusvirtual.uclm.es/mod/forum/discuss.php?d=246745">message 2</a></div></li>
+<li class="post"><div class="head clearfix"><div class="date">21 de nov, 09:46</div><div class="name">TEACHER 2</div></div><div class="info"><a href="https://campusvirtual.uclm.es/mod/forum/discuss.php?d=240087">message 3</a></div></li>
+<li class="post"><div class="head clearfix"><div class="date">15 de nov, 23:00</div><div class="name">TEACHER 3</div></div><div class="info"><a href="https://campusvirtual.uclm.es/mod/forum/discuss.php?d=239001">message 4</a></div></li>
+<li class="post"><div class="head clearfix"><div class="date">13 de nov, 22:49</div><div class="name">TEACHER 3</div></div><div class="info"><a href="https://campusvirtual.uclm.es/mod/forum/discuss.php?d=238330">message 5</a></div></li>
+</ul>
+
+            <div class="footer"><a href="https://campusvirtual.uclm.es/mod/forum/view.php?f=53874">Temas antiguos</a> ...</div>
+            
+        </div>
+
+    </div>
+
+</aside>
+
+  <span id="sb-4"></span><a href="#sb-5" class="sr-only sr-only-focusable">Saltar Eventos próximos</a>
+
+<aside id="inst943105" class=" block block_calendar_upcoming  card m-b-1" role="complementary" data-block="calendar_upcoming" aria-labelledby="instance-943105-header">
+
+    <div class="card-block">
+
+
+            <h3 id="instance-943105-header" class="card-title">Eventos próximos</h3>
+
+        <div class="card-text content">
+            <div class="post">No hay eventos próximos</div>
+            <div class="footer"><div class="gotocal"><a href="https://campusvirtual.uclm.es/calendar/view.php?view=upcoming&amp;course=27448">Ir al calendario</a>...</div><div class="newevent"><a href="https://campusvirtual.uclm.es/calendar/event.php?action=new&amp;course=27448">Nuevo evento</a>...</div></div>
+            
+        </div>
+
+    </div>
+
+</aside>
+
+  <span id="sb-5"></span><a href="#sb-6" class="sr-only sr-only-focusable">Saltar Actividad reciente</a>
+
+<aside id="inst943106" class=" block block_recent_activity  card m-b-1" role="complementary" data-block="recent_activity" aria-labelledby="instance-943106-header">
+
+    <div class="card-block">
+
+
+            <h3 id="instance-943106-header" class="card-title">Actividad reciente</h3>
+
+        <div class="card-text content">
+            <div class="activityhead">Actividad desde miércoles, 27 de junio de 2018, 20:32:32 </div><div class="activityhead"><a href="https://campusvirtual.uclm.es/course/recent.php?id=27448">Informe completo de la actividad reciente...</a></div><p class="message">Sin actividad reciente</p>
+            <div class="footer"></div>
+            
+        </div>
+
+    </div>
+
+</aside>
+
+  <span id="sb-6"></span></aside>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="nav-drawer" data-region="drawer" class="hidden-print moodle-has-zindex closed" aria-hidden="true" tabindex="-1">
+        <nav class="list-group">
+            <a class="list-group-item list-group-item-action font-weight-bold" href="https://campusvirtual.uclm.es/course/view.php?id=27448" data-key="coursehome">
+                <div class="m-l-0">
+                        (27448) CRIPTOGRAFÍA	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/user/index.php?id=27448" data-key="participants">
+                <div class="m-l-0">
+                        Participantes
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/grade/report/index.php?id=27448" data-key="grades">
+                <div class="m-l-0">
+                        Calificaciones
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-0" data-key="333550">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">General</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-1" data-key="333551">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Módulo 1 - Introducción a la Criptografía y Algoritmos clásicos</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-2" data-key="333552">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Módulo 2 - Algoritmos de clave simétrica y funciones hash</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-3" data-key="333553">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Módulo 3 - Algoritmos de clave asimétrica</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-4" data-key="333554">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Módulo 4 - Certificados digitales y PKI</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-5" data-key="333555">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Módulo 5 - Aplicaciones Criptográficas</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27448#section-6" data-key="333556">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Módulo 6 - Esteganografía</span>
+                        </div>
+                </div>
+            </a>
+        </nav>
+        <nav class="list-group m-t-1">
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/my/" data-key="myhome">
+                <div class="m-l-0">
+                        Área personal
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/?redirect=0" data-key="home">
+                <div class="m-l-0">
+                        Inicio del sitio
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/calendar/view.php?view=month" data-key="calendar">
+                <div class="m-l-0">
+                        Calendario
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/user/files.php" data-key="privatefiles">
+                <div class="m-l-0">
+                        Ficheros privados
+                </div>
+            </a>
+            <div class="list-group-item" data-key="mycourses">
+                <div class="m-l-0">
+                    Mis cursos
+                </div>
+            </div>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=28723" data-key="28723">
+                <div class="m-l-1">
+                        (28723) ANÁLISIS FORENSE DE MALWARE	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=28722" data-key="28722">
+                <div class="m-l-1">
+                        (28722) ANÁLISIS FORENSE EN DISPOSITIVOS MÓVILES	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=28555" data-key="28555">
+                <div class="m-l-1">
+                        (28555) ANÁLISIS FORENSE DE SISTEMAS Y REDES	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=28554" data-key="28554">
+                <div class="m-l-1">
+                        (28554) SEGURIDAD EN DISPOSITIVOS MÓVILES	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27753" data-key="27753">
+                <div class="m-l-1">
+                        (27753) AUDITORÍA WEB	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27751" data-key="27751">
+                <div class="m-l-1">
+                        (27751) EXPLOTACIÓN DE APLICACIONES Y SISTEMAS	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27628" data-key="27628">
+                <div class="m-l-1">
+                        (27628) SEGURIDAD Y FORTIFICACIÓN DE SISTEMAS OPERATIVOS Y REDES	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=27627" data-key="27627">
+                <div class="m-l-1">
+                        (27627) ATAQUES A REDES DE DATOS	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action font-weight-bold" href="https://campusvirtual.uclm.es/course/view.php?id=27448" data-key="27448">
+                <div class="m-l-1">
+                        (27448) CRIPTOGRAFÍA	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/view.php?id=23914" data-key="23914">
+                <div class="m-l-1">
+                        (23914) RECOPILACIÓN Y ANÁLISIS DE INFORMACIÓN	
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://campusvirtual.uclm.es/course/index.php#" data-key="courseindexpage">
+                <div class="m-l-1">
+                        Aún más...
+                </div>
+            </a>
+        </nav>
+    </div>
+</div><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
+<footer id="page-footer" class="p-y-1 bg-inverse">
+    <div class="container">
+        <div id="course-footer"></div>
+
+
+        <div class="logininfo">Usted se ha identificado como <a href="https://campusvirtual.uclm.es/user/profile.php?id=89145" title="Ver perfil">USERNAME</a> (<a href="https://campusvirtual.uclm.es/login/logout.php?sesskey=YmrRJil8P6">Cerrar sesión</a>)</div>
+        <div class="homelink"><a href="https://campusvirtual.uclm.es/">Página Principal</a></div>
+        <nav class="nav navbar-nav hidden-lg-up">
+                <ul class="list-unstyled p-t-1">
+                                    <li><a href="#" title="Idioma">Español - Internacional ‎(es)‎</a></li>
+                                <li>
+                                    <ul class="list-unstyled m-l-1">
+                                                        <li><a href="https://campusvirtual.uclm.es/course/view.php?id=27448&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a></li>
+                                                        <li><a href="https://campusvirtual.uclm.es/course/view.php?id=27448&amp;lang=es" title="Español - Internacional ‎(es)‎">Español - Internacional ‎(es)‎</a></li>
+                                    </ul>
+                                </li>
+                </ul>
+        </nav>
+        
+        <script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://campusvirtual.uclm.es/lib/requirejs.php/1505391229/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://campusvirtual.uclm.es/lib/javascript.php/1505391229/lib/jquery/jquery-3.1.0.min',
+        jqueryui: 'https://campusvirtual.uclm.es/lib/javascript.php/1505391229/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://campusvirtual.uclm.es/lib/javascript.php/1505391229/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="example1_files/require.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://campusvirtual.uclm.es/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("es",{
+ "Play": "Reproducción",
+ "Pause": "Pausa",
+ "Current Time": "Tiempo reproducido",
+ "Duration Time": "Duración total",
+ "Remaining Time": "Tiempo restante",
+ "Stream Type": "Tipo de secuencia",
+ "LIVE": "DIRECTO",
+ "Loaded": "Cargado",
+ "Progress": "Progreso",
+ "Fullscreen": "Pantalla completa",
+ "Non-Fullscreen": "Pantalla no completa",
+ "Mute": "Silenciar",
+ "Unmute": "No silenciado",
+ "Playback Rate": "Velocidad de reproducción",
+ "Subtitles": "Subtítulos",
+ "subtitles off": "Subtítulos desactivados",
+ "Captions": "Subtítulos especiales",
+ "captions off": "Subtítulos especiales desactivados",
+ "Chapters": "Capítulos",
+ "You aborted the media playback": "Ha interrumpido la reproducción del vídeo.",
+ "A network error caused the media download to fail part-way.": "Un error de red ha interrumpido la descarga del vídeo.",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "No se ha podido cargar el vídeo debido a un fallo de red o del servidor o porque el formato es incompatible.",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "La reproducción de vídeo se ha interrumpido por un problema de corrupción de datos o porque el vídeo precisa funciones que su navegador no ofrece.",
+ "No compatible source was found for this media.": "No se ha encontrado ninguna fuente compatible con este vídeo."
+});
+
+    });
+});;
+
+require(['jquery', 'message_popup/message_popover_controller'], function($, controller) {
+    var container = $('#nav-message-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(['jquery'], function($) {
+    $('#single_select5b33de0273f3f13').change(function() {
+        $('#single_select_f5b33de0273f3f12').submit();
+    });
+});
+;
+
+require(['jquery'], function($) {
+    $('#single_select5b33de0273f3f16').change(function() {
+        $('#single_select_f5b33de0273f3f15').submit();
+    });
+});
+;
+
+require(['theme_boost/loader']);
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+});
+;
+require(["core/notification"], function(amd) { amd.init(2290043, []); });;
+require(["core/log"], function(amd) { amd.setConfig({"level":"warn"}); });
+});
+//]]>
+</script>
+<script type="text/javascript" src="example1_files/format.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"\u00daltima modificaci\u00f3n","name":"Nombre","error":"Error","info":"Informaci\u00f3n","yes":"S\u00ed","no":"No","ok":"OK","cancel":"Cancelar","confirm":"Confirmar","areyousure":"\u00bfEst\u00e0 seguro?","closebuttontitle":"Cerrar","unknownerror":"Error desconocido"},"repository":{"type":"Tipo","size":"Tama\u00f1o","invalidjson":"Cadena JSON no v\u00e1lida","nofilesattached":"No se han adjuntado archivos","filepicker":"Selector de archivos","logout":"Salir","nofilesavailable":"No hay archivos disponibles","norepositoriesavailable":"Lo sentimos, ninguno de sus repositorios actuales puede devolver archivos en el formato solicitado.","fileexistsdialogheader":"El archivo existe","fileexistsdialog_editor":"Un archivo con el mismo nombre ya se ha adjuntado al texto que est\u00e1 editando.","fileexistsdialog_filemanager":"Un archivo con ese nombre ya ha sido adjuntado","renameto":"Cambiar el nombre a \"{$a}\"","referencesexist":"Existen {$a} archivos de alias\/atajos que emplean este archivo como su or\u00edgen","select":"Seleccionar"},"admin":{"confirmdeletecomments":"Est\u00e1 a punto de eliminar comentarios, \u00bfest\u00e1 seguro?","confirmation":"Confirmaci\u00f3n"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\n\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"es"});
+});
+Y.use("moodle-filter_glossary-autolinker",function() {M.filter_glossary.init_filter_autolinking({"courseid":0});
+});
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random5b33de0273f3f17'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5b33de0273f3f17'); });
+})();
+//]]>
+</script>
+
+    </div>
+</footer>
+
+
+</body></html>
