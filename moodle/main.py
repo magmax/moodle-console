@@ -61,7 +61,7 @@ class Moodle:
     def download(self, url):
         if url.startswith('/'):
             url = self.url + url
-        r = self.session.get(url, verify=False)
+        r = self.session.get(url, verify=False, timeout=10)
         return Parser(r.content)
    
     def download_link(self, url, title, path):
@@ -215,6 +215,26 @@ Next steps:
         print("Exit program. Shortcut: CTRL+D")
 
 
+def requests_retry_session(
+    retries=3,
+    backoff_factor=0.3,
+    status_forcelist=(500, 502, 504),
+    session=None,
+):
+    # taken from https://www.peterbe.com/plog/best-practice-with-retries-with-requests
+    session = session or requests.Session()
+    retry = requests.packages.urllib3.util.retry.Retry(
+        total=retries,
+        read=retries,
+        connect=retries,
+        backoff_factor=backoff_factor,
+        status_forcelist=status_forcelist,
+    )
+    adapter = requests.adapters.HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+    return session
+
 def getsession(url, user, password):
     s = requests.Session()
     #return s
@@ -237,7 +257,7 @@ def getsession(url, user, password):
         return
     r = s.post(bs.find('form')['action'], data=data, verify=False)
     logger.debug("access to url %s resulting in %s" % (url, r.status_code))
-    return s 
+    return requests_retry_session(session=s)
 
 
 def init_logging(debug=0):
